@@ -10,12 +10,16 @@
 class Strings {
 public:
     // No additional data structures -> O(n*log(n))
-    bool areAllCharsUnique(std::string str) const;
+    static bool areAllCharsUnique(std::string str);
 
     // Swap first with last, and so on.. -> O(n)
-    char *reverseCStr(char *str) const;
+    static char *reverseCStr(char *str);
 
-    std::string removeDuplicates(std::string str) const;
+    static std::string removeDuplicates(std::string str);
+
+    static std::string replaceSpaces(std::string str);
+
+    static bool isRotation(std::string str1, std::string str2);
 
 };
 

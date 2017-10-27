@@ -7,7 +7,7 @@
 #include "Strings.h"
 
 
-bool Strings::areAllCharsUnique(std::string str) const {
+bool Strings::areAllCharsUnique(std::string str) {
     // Sort the string -> O(n*log(n))
     std::sort(str.begin(), str.end());
 
@@ -23,7 +23,7 @@ bool Strings::areAllCharsUnique(std::string str) const {
     return true;
 }
 
-char* Strings::reverseCStr(char *str) const {
+char* Strings::reverseCStr(char *str) {
     auto length = strlen(str);
 
     for(int i = 0; i < length/2; i++) {
@@ -35,6 +35,25 @@ char* Strings::reverseCStr(char *str) const {
     return str;
 }
 
-std::string Strings::removeDuplicates(std::string str) const {
-    
+std::string Strings::removeDuplicates(std::string str) {
+    // TODO
+}
+
+std::string Strings::replaceSpaces(std::string str) {
+    for(int i = 0; i < str.length(); i++) {
+        if(str[i] == ' ') {
+            str.replace(i, 1, "%20", 3);
+        }
+    }
+
+    return str;
+}
+
+bool Strings::isRotation(std::string str1, std::string str2) {
+    if (str1.length() == str2.length()) {
+        std::string newstr = str1 + str1;
+        return newstr.find(str2) != std::string::npos;
+    }
+
+    return false;
 }
