@@ -8,6 +8,7 @@
 
 class Matrices {
 public:
+    // Transpones n*n matrix -> O(n^2)
     static void transpone(int **&matrix, int n);
 };
 

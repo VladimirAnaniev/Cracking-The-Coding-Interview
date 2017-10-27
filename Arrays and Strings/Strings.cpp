@@ -13,8 +13,8 @@ bool Strings::areAllCharsUnique(std::string str) {
 
     // if two successive chars are the same-> string is not unique
     char last;
-    for(char c : str) {
-        if(c == last) {
+    for (char c : str) {
+        if (c == last) {
             return false;
         }
         last = c;
@@ -23,10 +23,10 @@ bool Strings::areAllCharsUnique(std::string str) {
     return true;
 }
 
-char* Strings::reverseCStr(char *str) {
+char *Strings::reverseCStr(char *str) {
     auto length = strlen(str);
 
-    for(int i = 0; i < length/2; i++) {
+    for (int i = 0; i < length / 2; i++) {
         char temp = str[i];
         str[i] = str[length - 1 - i];
         str[length - 1 - i] = temp;
@@ -40,8 +40,8 @@ std::string Strings::removeDuplicates(std::string str) {
 }
 
 std::string Strings::replaceSpaces(std::string str) {
-    for(int i = 0; i < str.length(); i++) {
-        if(str[i] == ' ') {
+    for (int i = 0; i < str.length(); i++) {
+        if (str[i] == ' ') {
             str.replace(i, 1, "%20", 3);
         }
     }
@@ -51,9 +51,12 @@ std::string Strings::replaceSpaces(std::string str) {
 
 bool Strings::isRotation(std::string str1, std::string str2) {
     if (str1.length() == str2.length()) {
-        std::string newstr = str1 + str1;
-        return newstr.find(str2) != std::string::npos;
+        // Different length, cannot be the same
+        return false;
     }
 
-    return false;
+    // Concatenating 1 string to itself means that each rotation without shuffling
+    // will be included in the result
+    std::string newstr = str1 + str1;
+    return newstr.find(str2) != std::string::npos;
 }
