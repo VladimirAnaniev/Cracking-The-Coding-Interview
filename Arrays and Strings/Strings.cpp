@@ -35,10 +35,6 @@ char *Strings::reverseCStr(char *str) {
     return str;
 }
 
-std::string Strings::removeDuplicates(std::string str) {
-    // TODO
-}
-
 std::string Strings::replaceSpaces(std::string str) {
     for (int i = 0; i < str.length(); i++) {
         if (str[i] == ' ') {
@@ -59,4 +55,11 @@ bool Strings::isRotation(std::string str1, std::string str2) {
     // will be included in the result
     std::string newstr = str1 + str1;
     return newstr.find(str2) != std::string::npos;
+}
+
+bool Strings::areAnagrems(std::string str1, std::string str2) {
+    std::sort(str1.begin(), str1.end());
+    std::sort(str2.begin(), str2.end());
+
+    return str1 == str2;
 }

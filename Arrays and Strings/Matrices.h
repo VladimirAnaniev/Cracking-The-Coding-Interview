@@ -10,6 +10,9 @@ class Matrices {
 public:
     // Transpones n*n matrix -> O(n^2)
     static void transpone(int **&matrix, int n);
+
+    // if a cell is 0, its row and col are filled with 0s -> O(rows*cols)
+    static void fillZeros(int **&matrix, int rows, int cols);
 };
 
 
