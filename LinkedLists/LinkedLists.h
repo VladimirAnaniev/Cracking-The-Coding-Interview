@@ -26,12 +26,17 @@ struct LinkedNode {
 
 
 class LinkedLists {
+    static int getLength(LinkedNode *list);
 public:
     static LinkedNode *deleteNode(LinkedNode *head, int data);
 
     static void removeDuplicates(LinkedNode *&list);
 
     static LinkedNode *nthToLast(LinkedNode *&list, int &n);
+
+    static void deleteInPlace(LinkedNode *&elem);
+
+    static LinkedNode *addNumbers(LinkedNode *num1, LinkedNode *num2);
 
 };
 

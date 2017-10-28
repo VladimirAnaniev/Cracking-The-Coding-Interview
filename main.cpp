@@ -3,17 +3,21 @@
 
 int main() {
 
-    auto *first = new LinkedNode(0);
-    first->appendToTail(10);
-    first->appendToTail(22);
-    first->appendToTail(0);
-    first->appendToTail(10);
-    first->appendToTail(0);
+    auto *first = new LinkedNode(3);
+    first->appendToTail(1);
+    first->appendToTail(5);
 
-    int n = 0;
-    LinkedNode *result = LinkedLists::nthToLast(first, n);
+    auto *second = new LinkedNode(5);
+    second->appendToTail(9);
+    second->appendToTail(2);
+    second->appendToTail(3);
 
-    std::cout<<result->data;
+    LinkedNode * result = LinkedLists::addNumbers(first, second);
+
+    while(result != nullptr) {
+        std::cout<<result->data;
+        result = result->next;
+    }
 
     return 0;
 }
