@@ -2,6 +2,7 @@
 // Created by vladimir on 28/10/17.
 //
 
+#include <unordered_map>
 #include "LinkedLists.h"
 
 LinkedNode *LinkedLists::deleteNode(LinkedNode *head, int data) {
@@ -104,13 +105,8 @@ LinkedNode *LinkedLists::addNumbers(LinkedNode *num1, LinkedNode *num2) {
     return result;
 }
 
-int LinkedLists::getLength(LinkedNode *list) {
-    int len = 0;
 
-    while (list != nullptr) {
-        len++;
-        list = list->next;
-    }
 
-    return len;
+LinkedNode* LinkedLists::findStartOfCycle(LinkedNode *list) {
+    //TODO
 }

@@ -26,7 +26,6 @@ struct LinkedNode {
 
 
 class LinkedLists {
-    static int getLength(LinkedNode *list);
 public:
     static LinkedNode *deleteNode(LinkedNode *head, int data);
 
@@ -37,6 +36,8 @@ public:
     static void deleteInPlace(LinkedNode *&elem);
 
     static LinkedNode *addNumbers(LinkedNode *num1, LinkedNode *num2);
+
+    static LinkedNode *findStartOfCycle(LinkedNode *list);
 
 };
 
