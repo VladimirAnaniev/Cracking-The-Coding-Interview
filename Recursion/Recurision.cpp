@@ -61,3 +61,39 @@ std::vector<std::vector<int>> Recurision::getSubsetsRec(std::vector<int> &origin
 
     return subsets;
 }
+
+std::vector<std::string> Recurision::getAllPermutations(std::string original) {
+    std::vector<char> characters(original.begin(), original.end());
+
+    auto permutations = getPermutationsRec("", characters);
+
+    return permutations;
+}
+
+std::vector<std::string> Recurision::getPermutationsRec(std::string str, std::vector<char> chars) {
+    std::vector<std::string> permutations;
+
+    if(chars.size() == 0) {
+        // We have the whole permutated string
+        permutations.push_back(str);
+        return permutations;
+    }
+
+    // Copy of the remaining characters
+    auto remaining = chars;
+
+    for(int i = 0; i < chars.size(); i++) {
+        auto newStr = str + chars[i];
+
+        // Remove current char
+        remaining.erase(remaining.begin() + i);
+
+        auto newPermutations = getPermutationsRec(newStr, remaining);
+        permutations.insert(permutations.end(), newPermutations.begin(), newPermutations.end());
+
+        // put current char back
+        remaining.push_back(chars[i]);
+    }
+
+    return permutations;
+}

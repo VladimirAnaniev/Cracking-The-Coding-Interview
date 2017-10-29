@@ -7,9 +7,12 @@
 
 
 #include <vector>
+#include <string>
 
 class Recurision {
     static std::vector<std::vector<int>> getSubsetsRec(std::vector<int> &original, int index);
+
+    static std::vector<std::string> getPermutationsRec(std::string str, std::vector<char> chars);
 
 public:
     static unsigned int fibonacci(unsigned int n);
@@ -18,6 +21,9 @@ public:
 
     // O(2^n) tho
     static std::vector<std::vector<int>> getAllSubsets(std::vector<int> &original);
+
+    // O(n!) is the shit
+    static std::vector<std::string> getAllPermutations(std::string original);
 };
 
 

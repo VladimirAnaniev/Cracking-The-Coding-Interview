@@ -2,7 +2,6 @@
 #include "Recursion/Recurision.h"
 
 int main() {
-    std::vector<int> set = {1, 2, 3};
-    Recurision::getAllSubsets(set);
+    Recurision::getAllPermutations("opa");
     return 0;
 }
