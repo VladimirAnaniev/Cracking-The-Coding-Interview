@@ -1,20 +1,7 @@
 #include <iostream>
-#include "Stacks and Queues/SortableStack.h"
+#include "Recursion/Recurision.h"
 
 int main() {
-    SortableStack st;
-
-    st.push(100);
-    st.push(22);
-    st.push(34);
-    st.push(0);
-    st.push(101);
-
-    st.sort();
-
-    while(!st.empty()) {
-        std::cout<<st.pop()<<", ";
-    }
-
+    std::cout<< Recurision::possiblePaths(2, 2);
     return 0;
 }
