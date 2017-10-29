@@ -6,7 +6,7 @@
 #define CRACKINGTHECODINGINTERVIEW_STACK_H
 
 
-#include "../../LinkedLists/LinkedLists.h"
+#include "../LinkedLists/LinkedLists.h"
 
 class Stack {
 protected:
