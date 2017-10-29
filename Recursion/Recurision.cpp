@@ -28,3 +28,36 @@ int Recurision::possiblePaths(int m, int n) {
 
     return paths;
 }
+
+std::vector<std::vector<int>> Recurision::getAllSubsets(std::vector<int> &original) {
+    auto subsets = getSubsetsRec(original, original.size() - 1);
+
+    return subsets;
+}
+
+std::vector<std::vector<int>> Recurision::getSubsetsRec(std::vector<int> &original, int index) {
+    if (index < 0) {
+        // Return the set of the empty set
+        std::vector<int> emptySet;
+        std::vector<std::vector<int>> subsets;
+        subsets.push_back(emptySet);
+        return subsets;
+    }
+
+    // Get all smaller subsets
+    auto subsets = getSubsetsRec(original, index - 1);
+
+    int currentElem = original[index];
+    std::vector<std::vector<int>> newSubsets;
+
+    // Add the current element to all previous subsets
+    for(auto subset : subsets) {
+        subset.push_back(currentElem);
+        newSubsets.push_back(subset);
+    }
+
+    // Insert the newly created sets
+    subsets.insert(subsets.end(), newSubsets.begin(), newSubsets.end());
+
+    return subsets;
+}
