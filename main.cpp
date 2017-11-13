@@ -1,7 +1,12 @@
 #include <iostream>
 #include "Recursion/Recurision.h"
+#include "Recursion/Parentheses.h"
 
 int main() {
-    Recurision::getAllPermutations("opa");
+    auto combinations = Parentheses::generateCombinations(3);
+
+    for(auto combination : combinations) {
+        std::cout<<combination<<std::endl;
+    }
     return 0;
 }
